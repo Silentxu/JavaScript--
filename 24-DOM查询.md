@@ -9,12 +9,35 @@
 通过具体的元素节点调用
 1. getElementsByTagName()
     + 方法，返回当前节点的指定标签名后代节点
-2. childNodes
-    + 属性，表示当前节点的所有子节点
-3. firstChil
-    + 属性，表示当前节点的第一个子节点
-4. lastChild
-    + 属性，表示当前节点的最后一个子节点
+2. childNodes(children)
+    + 属性，表示当前节点的所有子节点,然而包括文本节点在内的所有节点
+    + 根据DOM标签标签间空白也会当做文本节点
+    + 注意：在ie8及以下的浏览器中，不会将空白文档当成子节点
+    + 推荐使用**children**
+3. firstChild(firstElenmentChild)
+    + 属性，表示当前节点的第一个子节点，包括空白节点
+    + firstElenmentChild是获取第一个子元素节点
+    + firstElenmentChild不兼容ie8及以下的浏览器
+4. lastChild(lastElenmentChild)
+    + 属性，表示当前节点的最后一个子节点，包括空白节点
+    + lastElenmentChild是获取最后一个子元素节点
+    + lastElenmentChild不兼容ie8及以下的浏览器
+
+## 获取父节点和兄弟节点
+通过具体的节点调用
+1. parentNode
+   + 属性，表示当前节点的父节点
+2. previousSibling
+   + 属性，表示当前节点的前一个兄弟节点
+3. nextSibling
+   + 属性，表示当前节点的后一个兄弟节点
+
+## 获取内部
++ innerHTML
+通过这个属性可以获取到元素内部的HTML代码
++ innerText
+该属性可能获取到元素内部的文本内容
+它和innerHTML类似，不同使得它会自动去除html标签
 
 ## 实例
 ```js
@@ -28,9 +51,14 @@
     <link rel="stylesheet" href="/code/mi/css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
+       //建立一个绑定单击响应的函数
+        function myClick(idStr, fun) {
+            var btn = document.getElementById(idStr);
+            btn.onclick = fun;
+        }
         window.onload = function () {
             //为id为btn01的按钮绑定一个单击响应函数
-            var btn01= document.getElementById("btn01");
+            var btn01 = document.getElementById("btn01");
             btn01.onclick = function () {
                 //查找#bj节点
                 var bj = document.getElementById("bj");
@@ -65,23 +93,90 @@
                     //innerHTML用于获取元素内部的HTML代码
                     //对于自结束标签 这个属性没有意义
                     //直接使用元素.属性名
-                        /*
-                        例子： 元素.id 元素.name 元素.value
-                        注意：class属性不能采用这种方式
-                            读取class属性时需要使用 元素.className
-                        */
+                    /*
+                    例子： 元素.id 元素.name 元素.value
+                    注意：class属性不能采用这种方式
+                        读取class属性时需要使用 元素.className
+                    */
                     alert(inputs[i].value);
                 };
             };
-        
-        //查找#city下所有li节点
-        //返回#city的所有子节点
-        //返回#phone的第一个子节点
-        //返回#bj的父节点
-        //返回#android的前一个兄弟节点
-        //读取#username的value属性值
-        //设置#username的value属性值
-        //返回#bj的文本值
+            //查找#city下所有li节点
+            var btn04 = document.getElementById("btn04");
+            btn04.onclick = function () {
+                var city = document.getElementById("city");
+                var lis = city.getElementsByTagName("li");
+                for (var i = 0; i < lis.length; i++) {
+                    alert(lis[i].innerHTML);
+                };
+            };
+
+            //返回#city的所有子节点
+            var btn05 = document.getElementById("btn05");
+            btn05.onclick = function () {
+                var city = document.getElementById("city");
+                /*childNodes属性会获取包括文本节点在内的所有节点
+                根据DOM标签标签间空白也会当成文本节点
+                注意：在ie8及以下的浏览器中，不会讲空白文档当成子节点
+                所以该属性在ie8中会返回4个子元素而其他浏览器是9个
+                */
+                // var cns = city.childNodes;
+                // for (var i = 0; i < cns.length; i++) {
+                //     alert(cns[i]);
+                // }
+                var cns2 = city.children;
+                for (var i = 0; i < cns2.length; i++) {
+                    alert(cns2[i].innerHTML);
+                };
+            };
+            //返回#phone的第一个子节点
+            var btn06 = document.getElementById("btn06");
+            btn06.onclick = function () {
+                var phone = document.getElementById("phone");
+                var frs = phone.firstChild;//#text 空白文档当成子节点
+                //var frs = phone.firstElementChild;
+                alert(frs);
+            };
+            //返回#bj的父节点
+            myClick("btn07", fun);
+            function fun() {
+                var bj = document.getElementById("bj");
+                var fth = bj.parentNode;
+                //alert(fth.innerHTML);
+                /*
+                innerText
+                该属性可能获取到元素内部的文本内容
+                */
+                alert(fth.innerText);
+
+            };
+            //返回#android的前一个兄弟节点
+            var btn08 = document.getElementById("btn08");
+            btn08.onclick = function () {
+                var android = document.getElementById("android");
+                var bro1 = android.previousElementSibling;
+                alert(bro1.innerHTML);
+                var bro2 = android.previousSibling;
+                alert(bro2.textContent);
+            };
+            //读取#username的value属性值
+            myClick("btn09" , function () {
+                var username = document.getElementById("username");
+                var value = username.value;
+                alert(value);
+            });
+            //设置#username的value属性值
+            myClick("btn10", fun02);
+            function fun02() {
+                var username = document.getElementById("username");
+                username.value = "还行吧";
+            }
+            //返回#bj的文本值
+            myClick("btn11", function () {
+                var bj = document.getElementById("bj");
+                 //alert(bj.innerText);
+                alert(bj.firstChild.nodeValue);
+            });
         };
     </script>
 </head>
@@ -120,11 +215,7 @@
                 你手机的操作系统是？
             </p>
 
-            <ul id="phone">
-                <li>IOS</li>
-                <li id="android">Android</li>
-                <li>windows Phone</li>
-            </ul>
+            <ul id="phone"><li>IOS</li><li id="android">Android</li><li>windows Phone</li></ul>
         </div>
 
         <div class="inner">
@@ -214,4 +305,68 @@
             </div>
     </body>
 ```
-
+## 获取的其他方法
+```js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            //获取body标签
+            //在document中有一个属性body，他保存的是body的引用
+            var body = document.body;
+            /*
+                document.documentElement 保存的是html根标签
+            */
+            var html = document.documentElement;
+            //document.all代表页面中所有的元素
+            var all = document.all;
+            console.log(all);
+            for (let i = 0; i < all.length; i++) {
+                console.log(all[i]); 
+            }
+            all = document.getElementsByTagName("*");
+            /*
+                根据元素的class属性值查询一组元素节点对象
+                getElemByClassName()可以根据class属性值获取一组元素节点对象
+                但是该方法不支持IE8及以下的浏览器
+            */
+            var box1 = document.getElementsByClassName("box1");
+            console.log(box1);
+            
+            //获取class为box1中的所有的div
+            // document.querySelector();
+                //需要一个选择器的字符串作为参数，可以根据一个css选择器来查询一个元素的节点对象
+                //虽然IE8中没有getElementsByClassName() 但是可以使用querySelector
+                //使用该方法总会返回唯一的一个元素，如果满足条件的元素有多个，那么它只会返回第一个           
+            var div = document.querySelector(".box1 div");
+            var div1 = document.querySelector(".box1");
+            //document.querySelectorAll()
+                //该方法和querySelector()用法类似，不同的是它会将符合条件的元素封装到一个数组中返回
+                //即使符合条件的元素只有一个，它也会返回到数组
+            console.log(div1.innerHTML);//我是第一个box1
+            console.log(div);
+        }   
+    </script>
+</head>
+<body>
+    <div class="box1">我是第一个box1
+        <div></div>
+    </div>
+    <div class="box1">
+        <div></div>
+    </div>
+    <div class="box1">
+        <div></div>
+    </div>
+    <div class="box1">
+        <div></div>
+    </div>
+    <div></div>
+</body>
+</html>
+```
