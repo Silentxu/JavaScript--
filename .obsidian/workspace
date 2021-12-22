@@ -1,0 +1,114 @@
+{
+  "main": {
+    "id": "bf9e84b7f548ce18",
+    "type": "split",
+    "children": [
+      {
+        "id": "88810e7cf4639dd4",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "21-正则表达式.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7a2c01187930c36b",
+    "type": "split",
+    "children": [
+      {
+        "id": "12db240f6c2599c5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5f9e9e61760b338e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "33b801e53d512c50",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "901f8a8e6e1308ec",
+    "type": "split",
+    "children": [
+      {
+        "id": "bcac0a075dc177c5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "837ab665cfc254d3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "21-正则表达式.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c2bc63999e0548c9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "21-正则表达式.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "88810e7cf4639dd4",
+  "lastOpenFiles": [
+    "21-正则表达式.md",
+    "高级/数据类型.md",
+    "16-数组.md",
+    "10-作用域.md",
+    "12-工厂方法.md",
+    "13-构造函数.md",
+    "11-this.md",
+    "09-声明提前.md",
+    "08-方法.md",
+    "07-函数.md"
+  ]
+}

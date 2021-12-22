@@ -34,9 +34,13 @@ console.log(Math.round(Math.random()*x));
 ```js
 console.log(Math.round(Math.random()*9) + 1);
 ```
-**生成x-y之间的随机数**
+**生成[x，y)之间的随机数**
 ```js
 console.log(Math.round(Math.random()*(y-x)) + x);
+```
+**生成[x-y]之间的随机数**
+```js
+console.log(Math.round(Math.random()*(y-x+1)) + x);
 ```
 ### max()最大值
 ```js

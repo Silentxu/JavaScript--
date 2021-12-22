@@ -21,10 +21,10 @@ Node——构成HTML文档最基本的单元
 ```
 |       |nodeName|nodeType|nodeValue|
 |  ----  | ----  | ---- |---- |
-|文档节点|#document|  9  |null|
+|文档节点|[[document]]|  9  |null|
 |元素节点| 标签名 |   1  |null|
 |属性节点| 属性名 |   2  |属性值|
-|文本节点| #text |   3   |文本内容|
+|文本节点| [[text]] |   3   |文本内容|
 
 
 浏览器已经为我们提供文档节点 对象这个对象window属性

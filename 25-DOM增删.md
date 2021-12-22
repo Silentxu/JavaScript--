@@ -30,7 +30,7 @@ city.innerHTML += "<li>广州</li>";
     <link rel="stylesheet" href="css/domStyle.css">
     <script>
         window.onload = function () {
-            // 创建一个“广州”节点，添加到#city下
+            // 创建一个“广州”节点，添加到[[city]]下
             myClick("btn01", function () {
                 //创建一个广州节点 <li>广州</li>
                 //创建li节点
@@ -64,7 +64,7 @@ city.innerHTML += "<li>广州</li>";
                 city.appendChild(li);
 
             });
-            // 将“广州”节点插入到#bj前面
+            // 将“广州”节点插入到[[bj]]前面
             myClick("btn02" , function () {
                 var li = document.createElement("li");
                 var gzText = document.createTextNode("广州");
@@ -80,7 +80,7 @@ city.innerHTML += "<li>广州</li>";
                 */
                 city.insertBefore(li,bj);
             });
-            // 使用“广州”节点替换#bj节点
+            // 使用“广州”节点替换[[bj]]节点
             myClick("btn03" , function () {
                 var li = document.createElement("li");
                 var gzText = document.createTextNode("广州");
@@ -89,20 +89,20 @@ city.innerHTML += "<li>广州</li>";
                 var city =document.getElementById("city");
                 city.replaceChild(li , bj);
             });
-            // 删除#bj节点
+            // 删除[[bj]]节点
             myClick("btn04" , function () {
                 var bj = document.getElementById("bj");
                 // var city = document.getElementById("city");
                 // city.removeChild(bj);
                 bj.parentNode.removeChild(bj);
             });
-            // 读取#city内的HTML代码
+            // 读取[[city内的HTML]]代码
             myClick("btn05" , function () {
                 var city = document.getElementById("city");
                 alert(city.innerHTML);
             });
 
-            // 设置#bj内的HTML代码
+            // 设置[[bj内的HTML]]代码
             myClick("btn06" , function () {
                var bj = document.getElementById("bj");
                bj.innerHTML = "杭州";
@@ -146,13 +146,13 @@ city.innerHTML += "<li>广州</li>";
         </div>
     </div>
     <div id="btnList">
-        <div><button id="btn01">创建一个“广州”节点，添加到#city下</button></div>
-        <div><button id="btn02">将“广州”节点插入到#bj前面</button></div>
-        <div><button id="btn03">使用“广州”节点替换#bj节点</button></div>
-        <div><button id="btn04">删除#bj节点</button></div>
-        <div><button id="btn05">读取#city内的HTML代码</button></div>
-        <div><button id="btn06">设置#bj内的HTML代码</button></div>
-        <div><button id="btn07">创建一个“广州”节点，添加到#city下</button></div>
+        <div><button id="btn01">创建一个“广州”节点，添加到[[city]]下</button></div>
+        <div><button id="btn02">将“广州”节点插入到[[bj]]前面</button></div>
+        <div><button id="btn03">使用“广州”节点替换[[bj]]节点</button></div>
+        <div><button id="btn04">删除[[bj]]节点</button></div>
+        <div><button id="btn05">读取[[city内的HTML]]代码</button></div>
+        <div><button id="btn06">设置[[bj内的HTML]]代码</button></div>
+        <div><button id="btn07">创建一个“广州”节点，添加到[[city]]下</button></div>
     </div>
 </body>
 
@@ -160,8 +160,10 @@ city.innerHTML += "<li>广州</li>";
 ```
 
 ## 实例2
+
 链接[增删练习2](file:///C:/Users/Simontu/Desktop/sourse/javascript/DOM添加删除记录.html)
-```js
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -277,13 +279,13 @@ city.innerHTML += "<li>广州</li>";
         }
     </script>
     <style>
-        #employeeTable {
+        [[employeeTable]] {
             margin: 10px auto;
             border-collapse: collapse;
             border: solid 1px;
         }
 
-        #formDiv {
+        [[formDiv]] {
             width: 250px;
             margin: 30px auto;
             padding-left: 30px;
