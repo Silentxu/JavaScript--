@@ -4,13 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "88810e7cf4639dd4",
+        "id": "e9f86d3692a16f40",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
             "file": "21-正则表达式.md",
-            "mode": "preview"
+            "mode": "preview",
+            "source": false
           }
         }
       }
@@ -39,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "时间",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,17 +99,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "88810e7cf4639dd4",
+  "active": "e9f86d3692a16f40",
   "lastOpenFiles": [
     "21-正则表达式.md",
+    "17-对象方法.md",
+    "01-代码块.md",
+    "02-流程控制语句.md",
     "高级/数据类型.md",
     "16-数组.md",
     "10-作用域.md",
     "12-工厂方法.md",
     "13-构造函数.md",
-    "11-this.md",
-    "09-声明提前.md",
-    "08-方法.md",
-    "07-函数.md"
+    "11-this.md"
   ]
 }

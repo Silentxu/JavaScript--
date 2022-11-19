@@ -1,5 +1,7 @@
 {
   "vimMode": false,
   "strictLineBreaks": false,
-  "defaultViewMode": "preview"
+  "defaultViewMode": "preview",
+  "legacyEditor": false,
+  "livePreview": true
 }
